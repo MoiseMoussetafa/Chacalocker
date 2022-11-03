@@ -1,0 +1,22 @@
+OS Raspberry Pi 4 model B 4G de ram : full debian bulleyes
+
+Crosscompilation qt 5.15 : https://www.interelectronix.com/fr/qt-sur-le-raspberry-pi-4.html
+
+--> instalation mosquitto
+
+--> instalation serveur network LoRa, bridge Lora, Application web LoRa : https://www.chirpstack.io/
+
+--> Configuration Capteur LoRa : https://support.nke.fr/Lora/
+ 
+--> Autorisation root ssh
+root ssh : sudo systemctl restart sshd // sudo passwd root
+		cd /etc/ssh
+		sudo nano sshd_config
+		PermitRootLogin without-password -> PermitRootLogin yes	
+		/etc/init.d/ssh restart
+		
+--> Gateway
+sudo apt update; sudo apt install git -y
+git clone https://github.com/RAKWireless/rak_common_for_gateway.git ~/rak_common_for_gateway
+cd ~/rak_common_for_gateway
+sudo ./install.sh
